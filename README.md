@@ -32,9 +32,8 @@ As for the features, this app doesn't reload everything after clicking something
 - Open a terminal emulator, cd to the directory of project and type "npm install" to install all dependencies and related packages which are present in package.json file, everything will be installed using this file.  
 - Type "npm run start" in terminal emulator.  
   
-</br>  
 > **Warning**  
 > Never delete package.json and package-lock.json. Never touch them if you're new. Read about those files, gain knowledge about it and then if it is required, do required things in those files.  
-</br>  
+  
 ## Credits -  
 I'm building this project with the help of [Code with Harry YouTube channel](https://www.youtube.com/@CodeWithHarry).
