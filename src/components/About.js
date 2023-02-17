@@ -1,4 +1,4 @@
-import React/*, { Component }*/ from "react";
+import React from "react";
 export default function About() {
     return (
         <section className="text-gray-600 body-font">
