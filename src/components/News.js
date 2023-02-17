@@ -71,7 +71,7 @@ export default function News(props) {
                             return (
                                 <NewsItem
                                     key={element.url}
-                                    titleTooltip={element?.title ? element?.title : ""}
+                                    titleTooltip={element.title ? element.title : ""}
                                     title={element.title ? element.title.slice(0, 50) : ""}
                                     /*using ternary operator (if-else condition shorthand) to handle NULL values in news api object, slice function won't work on NULL values*/
                                     description={element.description ? element.description.slice(0, 70) : ""}

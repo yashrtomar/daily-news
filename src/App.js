@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //no Switch in latest version
 export default function App() {
     const pageSize = 6;
-    const apiKey = "6666acfaa2b549eea93d1259b5872872";
+    const apiKey = process.env.REACT_APP_NEWS_API;
     return (
         <Router basename={process.env.PUBLIC_URL}>
             <Header />
