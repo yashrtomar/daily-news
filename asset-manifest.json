@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/daily-mews/static/css/main.5d91fb3b.css",
+    "main.js": "/daily-mews/static/js/main.04eb0740.js",
+    "static/media/Image_not_available.png": "/daily-mews/static/media/Image_not_available.bd444999fd8546f854fb.png",
+    "index.html": "/daily-mews/index.html",
+    "main.5d91fb3b.css.map": "/daily-mews/static/css/main.5d91fb3b.css.map",
+    "main.04eb0740.js.map": "/daily-mews/static/js/main.04eb0740.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d91fb3b.css",
+    "static/js/main.04eb0740.js"
+  ]
+}
