@@ -7,26 +7,25 @@ export default function News(props) {
         let capital=string.charAt(0).toUpperCase() + string.slice(1);
         return capital;
     } */
-    /*constructor for objects */
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
     document.title = props.category ? `${props.category} - Daily News` : `Daily News`;
     const updateNews = async () => {
-        setLoading(true); /*? */
+        // setLoading(true); /*? */
+        if (loading===true){
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
         let data = await fetch(url);
         /*fetch api returns a promise so we can use async-await here so function will wait for promise to be resolved*/
         let parsedData = await data.json();
         setArticles(articles.concat(parsedData.articles));
         setTotalResults(parsedData.totalResults);
-        setLoading(false);
+        setLoading(false);}
     }
     useEffect(() => {
         updateNews();
-    }, [])
-    /*componentDidMount is a lifecycle function for class component*/
+    }, [updateNews]);
     /* const handlePreviousBtn = async () => {
         setPage(page - 1);
         updateNews();
@@ -72,10 +71,11 @@ export default function News(props) {
                             return (
                                 <NewsItem
                                     key={element.url}
-                                    titleTooltip={element.title}
+                                    titleTooltip={element.title ? element.title : ""}
                                     title={element.title ? element.title.slice(0, 50) : ""}
                                     /*using ternary operator (if-else condition shorthand) to handle NULL values in news api object, slice function won't work on NULL values*/
                                     description={element.description ? element.description.slice(0, 70) : ""}
+                                    descriptionTooltip={element.description ? element.description : ""}
                                     imageUrl={element.urlToImage ? element.urlToImage : ""}
                                     newsUrl={element.url}
                                     source={element.source.name}

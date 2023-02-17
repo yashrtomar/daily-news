@@ -1,13 +1,17 @@
 import React from 'react';
+import noImage from '../assets/Image_not_available.png';
 export default function NewsItem(props) {
-    let { titleTooltip, title, description, imageUrl, newsUrl, source, author, date } = props;
+    let { titleTooltip, title, description, descriptionTooltip, imageUrl, newsUrl, source, author, date } = props;
     return (
         <div className="p-4 md:w-1/3">
             <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={imageUrl} />
+                {imageUrl ?
+                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={imageUrl} alt={imageUrl} /> :
+                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={noImage} alt="" />
+                }
                 <div className="p-6">
                     <h1 title={titleTooltip} className="title-font text-lg font-medium text-gray-900 mb-1 cursor-default">{title}...</h1>
-                    <p className="leading-relaxed mb-4 cursor-default">{description}...</p>
+                    <p className="leading-relaxed mb-4 cursor-default" title={descriptionTooltip}>{description}...</p>
                     <h3 className="title-font text-sm text-gray-400 mb-2 cursor-default">Source: {source}</h3>
                     <div className='cursor-default'>
                         <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 pb-1">
@@ -41,5 +45,3 @@ export default function NewsItem(props) {
         </div>
     );
 }
-
-/* Your API key is: 6666acfaa2b549eea93d1259b5872872 */
